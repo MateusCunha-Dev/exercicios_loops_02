@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercicios loops</title>
+  </head>
+  <body>
+    <h1>EXERCICIO 3</h1>
+
+    <script>
+      let nome;
+      let idade;
+      let salario;
+      let sexo;
+      let estadoCivil;
+
+      while (true) {
+        nome = prompt("Qual seu nome?");
+        idade = Number(prompt("Qual a sua idade?"));
+        salario = Number(prompt("Qual seu salário?"));
+        sexo = prompt(
+          "Qual seu gênero?\n" + 
+           "('f' = Feminino | 'm' = Masculino)"
+        );
+        estadoCivil = prompt(
+          "Qual seu estado civil?\n" +
+            "('s' = Solteiro | 'c' = Casado | 'v' = Viúvo | 'd' = Divorciado)"
+        );
+
+        if (nome.length <= 3) {
+          alert("Erro! Nome tem que ser maior que 3 caracteres");
+          continue;
+        }
+        if (idade < 0 || idade > 150 || isNaN(idade)) {
+          alert("Erro! Idade deve ser entre 0 à 150 anos");
+          continue;
+        }
+        if (salario <= 0 || isNaN(salario)) {
+          alert("Erro! Salário deve ser maior que R$ 0 reais");
+          continue;
+        }
+        if (sexo !== "m" && sexo !== "f") {
+          alert("Erro! Gênero é masculino ou feminino");
+          continue;
+        }
+        if (
+          estadoCivil !== "s" &&
+          estadoCivil !== "c" &&
+          estadoCivil !== "v" &&
+          estadoCivil !== "d"
+        ) {
+          alert("Erro! Entre com estado civil correto");
+          continue;
+        } else {
+          alert(
+              `Nome: ${nome}\n` +
+              `Idade: ${idade} anos\n` +
+              `Salário: R$ ${salario.toFixed(2)} reais\n` +
+              `Gênero: ${sexo}\n` +
+              `Estado Civil: ${estadoCivil}`
+          );
+          break;
+        }
+      }
+    </script>
+  </body>
+</html>
